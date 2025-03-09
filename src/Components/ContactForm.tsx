@@ -2,7 +2,7 @@ import React from "react";
 
 function ContactForm() {
   return (
-    <div className="py-8 mx-6 px-4 md:px-20 md:mx-20 md:py-20 md:flex items-center justify-between">
+    <div id="contact" className="py-8 mx-6 px-4 md:px-20 md:mx-20 md:py-20 md:flex items-center justify-between">
       <div className="flex flex-col h-full md:space-y-40 md:w-1/2 items-start justify-between">
         <h1 className="font-bold text-2xl md:text-3xl md:pr-40 pb-4">
           Have a <span className="text-[#FC9713]">free consultation</span> from

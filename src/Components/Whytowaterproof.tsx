@@ -3,7 +3,7 @@ import GridItem from "@/Components/GridItem";
 
 function Whytowaterproof() {
   return (
-    <div className="px-4 mx-6 md:px-20 md:mx-20 py-20 text-center border-b ">
+    <div className="px-10 md:px-40 py-20 text-center border-b bg-[#E3DEFE]">
       <h1 className="text-3xl font-bold">
         Why to <span className="text-[#FA9818]">waterproof</span>
       </h1>

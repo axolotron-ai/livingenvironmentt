@@ -14,11 +14,11 @@ function Hero() {
           walls. Our trusted solutions protect your home from water damage,
           keeping it safe, strong, and stress-free for years to come.
         </p>
-        <button className="bg-[#5033E2] text-white px-4 py-1 mt-4 rounded-md hidden md:inline-block">
-          Get waterproofed
+        <button className="bg-[#5033E2] text-white px-6 py-2 mt-4 rounded-md hidden md:inline-block text-lg">
+          <a href="#contact">Get waterproofed</a>
         </button>
         <button className="bg-[#F1AC51] px-4 py-1 rounded-md md:hidden">
-          Free consultation
+          <a href="#contact">Free consultation</a>
         </button>
       </div>
       <Image

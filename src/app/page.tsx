@@ -10,7 +10,7 @@ import Whytowaterproof from "@/Components/Whytowaterproof";
 export default function Home() {
   return (
     <div className="overflow-clip">
-      <Navbar />
+      <Navbar bg="black"/>
       <Hero />
       <Whytowaterproof />
       <TypesOfWaterproofing />

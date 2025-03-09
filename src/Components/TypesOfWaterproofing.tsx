@@ -3,11 +3,11 @@ import TypesOfWaterproofingBox from "./TypesOfWaterproofingBox";
 
 function TypesOfWaterproofing() {
   return (
-    <div className="py-8 mx-6 md:py-20 md:px-20 border-b md:mx-20">
+    <div className="py-8 mx-6 md:py-20 md:px-10 border-b md:mx-10">
       <h1 className="font-bold text-2xl pb-6 md:pb-20 text-center">
         Types of <span className="text-[#FC9713]">Waterproofing</span>
       </h1>
-      <div className="md:flex md:mx-48 gap-x-8 ml-6">
+      <div className="flex md:flex-row flex-col md:mx-48 md:gap-x-8 md:ml-6">
         <TypesOfWaterproofingBox
           icon="/tow-01.png"
           heading="1. App Membrane"

@@ -1,14 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Button } from "@/Components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/Components/ui/dialog";
 
@@ -34,13 +29,13 @@ function TypesOfWaterproofingBox({
 }) {
   return (
     <>
-      <div className="bg-[#EEEEEE] h-[350px] w-80 rounded-lg mb-10 md:mb-0">
+      <div className="bg-[#EEEEEE] h-[350px] w-80 md:h-[450px] md:w-[400px] rounded-lg mb-10 md:mb-0 mx-auto">
         <Image
           src={icon}
           width={250}
           height={250}
           alt="TypesOfWaterproofing"
-          className="h-[60%] mb-4 w-[90%] mx-auto mt-2"
+          className="h-[60%] mb-4 w-full mt-2"
         />
         <div className="px-4 pb-4 h-1/3 flex-col items-center">
           <h1>{heading}</h1>
