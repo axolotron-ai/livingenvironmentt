@@ -11,7 +11,7 @@ function GridItem({
   paragraph: string;
 }) {
   return (
-    <div className="border rounded-md p-6 text-left gap-y-1 flex flex-col">
+    <div className="border-black border-2 rounded-md p-6 text-left gap-y-1 flex flex-col">
       <Image src={icon} width={40} height={40} alt="Icon" />
       <h1 className="font-medium text-lg">{heading}</h1>
       <p className="leading-5">{paragraph}</p>

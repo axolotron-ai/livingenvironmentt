@@ -17,7 +17,7 @@ function Hero() {
         <button className="bg-[#5033E2] text-white px-6 py-2 mt-4 rounded-md hidden md:inline-block text-lg">
           <a href="#contact">Get waterproofed</a>
         </button>
-        <button className="bg-[#F1AC51] px-4 py-1 rounded-md md:hidden">
+        <button className="bg-[#F1AC51] px-6 py-2 text-[16px] font-medium rounded-md md:hidden">
           <a href="#contact">Free consultation</a>
         </button>
       </div>
@@ -27,7 +27,7 @@ function Hero() {
         width={400}
         quality={100}
         alt="hero image"
-        className="h-60 w-60 relative md:block rounded-lg ml-4 mt-6 md:mt-0 md:ml-0 md:rounded-none md:mx-0 md:w-full md:h-auto z-0"
+        className="h-60 w-80 relative md:block rounded-lg ml-4 mt-6 md:mt-0 md:ml-0 md:rounded-none md:mx-0 md:w-full md:h-auto z-0"
       />
 
       <div className="bg-[#2F2F2F99] bg-opacity-60 w-fit h-fit absolute md:bottom-16 md:right-24 md:flex items-center justify-evenly md:gap-x-10 md:px-4 md:py-6 p-2 left-4 bottom-0.5 rounded-lg md:left-auto">
