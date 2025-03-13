@@ -30,10 +30,10 @@ export default function Admin() {
                     }}>
                         <div className="grid grid-flow-row gap-[10px] w-[350px] h-[300px] p-[20px] shadow-2xl">
                             <p>Unique ID</p>
-                            <input onChange={(event) => setID(event.target.value)} type="text" placeholder="ID" className="bg-gray-100 p-[6px] rounded-[5px]" />
+                            <input onChange={(event) => setID(event.target.value)} type="text" placeholder="ID" className="bg-gray-100 p-[6px] rounded-[5px]" required/>
                             <p>Unique Password</p>
-                            <input onChange={(event) => setPassword(event.target.value)} type="text" placeholder="Password" className="bg-gray-100 p-[6px] rounded-[5px]" />
-                            <button className="">Verify</button>
+                            <input onChange={(event) => setPassword(event.target.value)} type="text" placeholder="Password" className="bg-gray-100 p-[6px] rounded-[5px]" required/>
+                            <button className="bg-black text-white font-bold h-[40px] rounded-[10px] my-[10px]">Verify</button>
                             <p className="opacity-30 text-[15px]">*Wrong attempts will be recorded.</p>
                         </div>
                     </Box>
