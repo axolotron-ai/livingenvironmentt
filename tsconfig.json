@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/Components/Frontimg.js", "src/Components/Services.js", "src/Components/BlogSectionC.js", "src/Components/NavbarC.js", "src/app/blog/page.js", "src/Components/ContactForm.tsx", "src/app/layout.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/Components/Frontimg.js", "src/Components/Services.js", "src/Components/BlogSectionC.js", "src/Components/NavbarC.js", "src/app/blog/page.js", "src/Components/ContactForm.js", "src/app/layout.tsx"],
   "exclude": ["node_modules"]
 }

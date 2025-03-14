@@ -149,9 +149,8 @@ function Body() {
             <>
                 <div className="grid grid-flow-row mx-[10px] mb-[20px]">
                     <div className="h-[60px] border-[2px] border-gray-200 rounded-t-[10px] flex items-center justify-between px-[10px]">
-                        <p className="font-bold">Services -  Waterproof</p>
+                        <p className="font-bold">Services -  Construction</p>
                         <button className="text-white font-bold h-[35px] w-[80px] bg-black flex items-center justify-center rounded-[10px] cursor-pointer">New</button>
-                        <div>{newPopup}</div>
                     </div>
                     <div className="h-[500px] border-[2px] border-gray-200 rounded-b-[10px] border-t-0"></div>
                 </div>
