@@ -199,6 +199,7 @@ function Body() {
 export default function admin() {
     return (
         <>
+            <LoginPanel />
             <DashboardHeader />
             <Body />
         </>
