@@ -12,7 +12,7 @@ function BlogSection() {
         helping you stay ahead and make informed decisions.
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 md:justify-evenly mt-10 mb-0 pb-0 gap-[25px]">
+      <div className="grid md:grid-flow-col grid-flow-row items-center justify-center gap-[25px]">
         <BlogGridItem
           icon="/bg-01.png"
           heading="Trends and innovation in best Construction

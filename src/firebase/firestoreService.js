@@ -33,14 +33,4 @@ const deleteData = async (collectionName, id) => {
 
 };
 
-export const updateData = async (collectionName, id, newData) => {
-    try {
-        const docRef = doc(db, collectionName, id);
-        await updateDoc(docRef, newData);
-        console.log("Document updated successfully!");
-    } catch (error) {
-        console.error("Error updating document:", error);
-    }
-};
-
-export { addData, getData, deleteData, updateData };  //export the functions
+export { addData, getData, deleteData };  //export the functions
