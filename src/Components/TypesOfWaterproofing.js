@@ -44,7 +44,7 @@ function TypesOfWaterproofing() {
       <h1 className="font-bold text-2xl pb-6 text-center font-inter text-[35px]">
         Types of <span className="text-[#FC9713] font-inter text-[35px]">Waterproofing</span>
       </h1>
-      <div className="grid md:grid-flow-col grid-flow-row md:justify-evenly font-inter">
+      <div>
         <div className="md:flex md:justify-evenly grid grid-flow-row gap-[25px] md:gap-0 py-[50px] items-center justify-center">
           {data && data.slice(0, 3).map((datum) => (
             <div key={datum.id} className="grid grid-flow-row font-inter h-[410px] w-[300px] md:h-[500px] md:w-[390px] bg-[#EEEEEE] gap-[15px] p-[25px] rounded-[10px]">
