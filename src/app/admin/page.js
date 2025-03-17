@@ -106,7 +106,6 @@ function LoginPanel() {
 export default function DashboardApp() {
     return (
         <div>
-            <LoginPanel />
             <Dashboard />
         </div>
     )
