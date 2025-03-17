@@ -19,7 +19,7 @@ function Navbar({ bg }: { bg: string }) {
         <Link href="#">Home</Link>
         <Link href="#">Services</Link>
         <Link href="/construction">Construction</Link>
-        <button className="bg-[#5033E2] text-white px-4 py-1 rounded-md">
+        <button className="bg-[#5033E2] text-white px-4 py-1 rounded-md cursor-pointer">
           Free Consultation
         </button>
       </div>

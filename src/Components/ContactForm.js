@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { addData } from "@/firebase/firestoreService";
+import { serverTimestamp } from "firebase/firestore";
 
 function ContactForm() {
   const [name, setName] = useState("");
@@ -12,7 +13,7 @@ function ContactForm() {
 
   const sendData = async () => {
     setLoading(true);
-    await addData("Interests", { name, email, phno, service });
+    await addData("Interests", { name, email, phno, service, createdAt:serverTimestamp() });
     setLoading(false);
     document.getElementById("name-id").value = "";
     document.getElementById("phno-id").value = "";

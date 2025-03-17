@@ -1,5 +1,11 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+
+const scrollToSection = (id) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
+
 
 function Hero() {
   return (
@@ -15,7 +21,7 @@ function Hero() {
         <button className="bg-[#5033E2] text-white px-6 py-2 mt-4 rounded-md hidden md:inline-block text-lg">
           <a href="#contact">Construct your home</a>
         </button>
-        <button className="bg-[#F1AC51] md:bg-[#5033E2] md:text-white px-6 py-2 text-[16px] font-medium rounded-md md:hidden">
+        <button className="bg-[#F1AC51] md:bg-[#5033E2] md:text-white px-6 py-2 text-[16px] font-medium rounded-md md:hidden" onClick={() => scrollToSection("contact")}>
           <a href="#contact">Free consultation</a>
         </button>
       </div>

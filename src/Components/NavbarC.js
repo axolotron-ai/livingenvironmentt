@@ -19,7 +19,7 @@ function Navbar({ bg }) {
         <Link to="/construction" smooth={true} duration={500} className="underline decoration-2 decoration-white">
           Construction
         </Link>
-        <button className="bg-[#5033E2] text-white px-4 py-1 rounded-md">
+        <button className="bg-[#5033E2] text-white px-4 py-1 rounded-md cursor-pointer">
           Free Consultation
         </button>
       </div>

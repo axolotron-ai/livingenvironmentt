@@ -1,7 +1,48 @@
-"use client"
-import React, { useEffect, useState } from "react";
-import { Box, Button, Dialog } from "@mui/material";
-import { getData, addData } from "@/firebase/firestoreService";
+"use client";
+
+import react, { useEffect } from "react";
+import React, { useState } from "react";
+import { getData } from "@/firebase/firestoreService";
+import EmailInterests from "@/Components/Dashboard/EmailInterests";
+import Blog from "@/Components/Dashboard/Blog";
+import Services from "@/Components/Dashboard/Services";
+import Settings from "@/Components/Dashboard/Settings";
+import { Dialog } from "@radix-ui/react-dialog";
+import { Box } from "@mui/material";
+
+const Dashboard = () => {
+    const [activeTab, setActiveTab] = useState("Services");
+
+    return (
+        <>
+            <div className="flex">
+                <Sidebar setActiveTab={setActiveTab} />
+                <div className="flex-1">
+                    {activeTab === "Services" && <Services />}
+                    {activeTab === "Blog" && <Blog />}
+                    {activeTab === "EmailInterests" && <EmailInterests />}
+                    {activeTab === "Settings" && <Settings />}
+                </div>
+            </div>
+        </>
+    )
+}
+
+
+const Sidebar = ({ setActiveTab }) => {
+    return (
+        <div className="grid grid-flow-col">
+            <div className="w-64 h-full bg-gray-900 text-white p-5 mb-[500px]">
+                <h2 className="text-lg font-bold mb-5">Dashboard</h2>
+                <button onClick={() => setActiveTab("Services")} className="block w-full py-2 px-4 text-left hover:bg-gray-700">Services</button>
+                <button onClick={() => setActiveTab("Blog")} className="block w-full py-2 px-4 text-left hover:bg-gray-700">Blog</button>
+                <button onClick={() => setActiveTab("EmailInterests")} className="block w-full py-2 px-4 text-left hover:bg-gray-700">Email Interests</button>
+                <button onClick={() => setActiveTab("Settings")} className="block w-full py-2 px-4 text-left hover:bg-gray-700">Settings</button>
+            </div>
+        </div>
+    )
+}
+
 
 function LoginPanel() {
     const [open, setOpen] = useState(true);
@@ -62,145 +103,11 @@ function LoginPanel() {
 };
 
 
-function DashboardHeader() {
+export default function DashboardApp() {
     return (
-        <>
-            <div className="h-[80px] w-full bg-black flex justify-evenly items-center">
-                <p className="text-gray-200 font-semibold text-[24px]">Dashboard</p>
-            </div>
-        </>
-    );
-};
-
-
-
-
-
-
-function Body() {
-    const [serviceisTab, setServiceIsTab] = useState(true);
-    const [blogisTab, setBlogIsTab] = useState(false);
-    const [emailTab, setEmailTab] = useState(false);
-    const [code, setCode] = useState(
-        <>
-            <div className="grid grid-flow-row mx-[10px] mb-[20px]">
-                <div className="h-[60px] border-[2px] border-gray-200 rounded-t-[10px] flex items-center justify-between px-[10px]">
-                    <p className="font-bold">Services -  Waterproof</p>
-                    <button className="text-white font-bold h-[35px] w-[80px] bg-black flex items-center justify-center rounded-[10px] cursor-pointer">New</button>
-                </div>
-                <div className="h-[500px] border-[2px] border-gray-200 rounded-b-[10px] border-t-0"></div>
-            </div>
-            <div className="grid grid-flow-row mx-[10px]">
-                <div className="h-[60px] border-[2px] border-gray-200 rounded-t-[10px] flex items-center justify-between px-[10px]">
-                    <p className="font-bold">Services -  Construction</p>
-                    <button className="text-white font-bold h-[35px] w-[80px] bg-black flex items-center justify-center rounded-[10px] cursor-pointer">New</button>
-                </div>
-                <div className="h-[500px] border-[2px] border-gray-200 rounded-b-[10px] border-t-0"></div>
-            </div>
-        </>
-    );
-
-    const EmailInterests = async () => {
-        let setData = await getData("Interests");
-
-        setServiceIsTab(false);
-        setBlogIsTab(false);
-        setEmailTab(true);
-        setCode(
-            <div className="grid grid-flow-row mx-[10px]">
-                <div className="h-[60px] border-[2px] border-gray-200 rounded-t-[10px] flex items-center justify-between px-[10px]">
-                    <p className="font-bold">Email Interests</p>
-                </div>
-                <div className="h-max border-[2px] border-gray-200 rounded-b-[10px] border-t-0 p-[15px] grid grid-flow-row gap-[15px]">
-                    {setData.map((data) => (
-                        <div key={data.id} className="flex justify-between p-[10px] bg-gray-200 rounded-[10px] h-max">
-                            <div>
-                                <p>{data.name}</p>
-                                <p>{data.phno}</p>
-                                <p>{data.email}</p>
-                            </div>
-                            <p className="font-semibold flex items-center">Interest: {data.service}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        );
-    }
-
-    const [newPopup, setNewPopup] = useState(null);
-    const [newPopupOpen, setNewPopupOpen] = useState(true)
-    /* const newWater = () => {
-        setNewPopup(
-            <>
-                <Dialog open={newPopupOpen}>
-                    <Box sx={{ position: "fixed", width: 500, height: 500 }}>
-                        <p>New Data</p>
-                    </Box>
-                </Dialog>
-            </>
-        )
-    } */
-
-    const servicePage = () => {
-        setServiceIsTab(true);
-        setBlogIsTab(false);
-        setEmailTab(false);
-        setCode(
-            <>
-                <div className="grid grid-flow-row mx-[10px] mb-[20px]">
-                    <div className="h-[60px] border-[2px] border-gray-200 rounded-t-[10px] flex items-center justify-between px-[10px]">
-                        <p className="font-bold">Services -  Construction</p>
-                        <button className="text-white font-bold h-[35px] w-[80px] bg-black flex items-center justify-center rounded-[10px] cursor-pointer">New</button>
-                    </div>
-                    <div className="h-[500px] border-[2px] border-gray-200 rounded-b-[10px] border-t-0"></div>
-                </div>
-                <div className="grid grid-flow-row mx-[10px]">
-                    <div className="h-[60px] border-[2px] border-gray-200 rounded-t-[10px] flex items-center justify-between px-[10px]">
-                        <p className="font-bold">Services -  Construction</p>
-                        <button className="text-white font-bold h-[35px] w-[80px] bg-black flex items-center justify-center rounded-[10px] cursor-pointer">New</button>
-                    </div>
-                    <div className="h-[500px] border-[2px] border-gray-200 rounded-b-[10px] border-t-0"></div>
-                </div>
-            </>
-        );
-    }
-    const blogPage = () => {
-        setServiceIsTab(false);
-        setBlogIsTab(true);
-        setEmailTab(false);
-        setCode(
-            <div className="grid grid-flow-row mx-[10px]">
-                <div className="h-[60px] border-[2px] border-gray-200 rounded-t-[10px] flex items-center justify-between px-[10px]">
-                    <p className="font-bold">Blogs</p>
-                    <button className="text-white font-bold h-[35px] w-[80px] bg-black flex items-center justify-center rounded-[10px] cursor-pointer">New</button>
-                </div>
-                <div className="h-[500px] border-[2px] border-gray-200 rounded-b-[10px] border-t-0"></div>
-            </div>
-        );
-    }
-
-
-    return (
-        <>
-            <div className="mx-[10px] my-[20px] bg-gray-200 h-[45px] w-[430px] flex items-center rounded-[10px] px-[5px] gap-[10px]">
-                <button className={`hover:bg-white h-[35px] w-[125px] rounded-[10px] cursor-pointer ${serviceisTab ? `bg-white` : ``}`} onClick={servicePage}>Services</button>
-                <button className={`hover:bg-white h-[35px] w-[125px] rounded-[10px] cursor-pointer ${blogisTab ? `bg-white` : ``}`} onClick={blogPage}>Blog</button>
-                <button className={`hover:bg-white h-[35px] w-[145px] rounded-[10px] cursor-pointer ${emailTab ? `bg-white` : ``}`} onClick={EmailInterests}>Email Interests</button>
-            </div>
-            <div>
-                {code}
-            </div>
-
-        </>
-    );
-}
-
-export default function admin() {
-    return (
-        <>
+        <div>
             <LoginPanel />
-            <DashboardHeader />
-            <Body />
-        </>
-    );
-};
+            <Dashboard />
+        </div>
+    )
+}
