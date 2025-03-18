@@ -58,7 +58,7 @@ function TypesOfWaterproofing() {
               <button onClick={() => checkBox(datum)} className="text-[#FC9713] text-start text-[18px] md:text-xl cursor-pointer font-semibold">View Details &gt;</button>
             </div>
           ))}
-          {openBox && <div className="fixed inset-0 flex items-center justify-center bg-white" onClick={() => setOpenBox(false)}>
+          {openBox && <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md mt-[80px]" onClick={() => setOpenBox(false)}>
             <div className="bg-gray-200 p-[20px] rounded-[10px] shadow-2xl md:w-[1000px] h-[500px] md:h-[580px] grid grid-flow-row gap-[10px] w-[300px] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
               <div className="grid grid-flow-row">
                 <div className="text-red-800 text-end mb-[10px] cursor-pointer" onClick={() => setOpenBox(false)}>Close</div>

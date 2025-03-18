@@ -13,12 +13,12 @@ function ContactForm() {
 
   const sendData = async () => {
     setLoading(true);
-    await addData("Interests", { name, email, phno, service, createdAt:serverTimestamp() });
+    await addData("Interests", { name, email, phno, service, createdAt: serverTimestamp() });
     setLoading(false);
     document.getElementById("name-id").value = "";
     document.getElementById("phno-id").value = "";
     document.getElementById("email-id").value = "";
-    document.getElementById("service-id").value = "";
+    document.getElementById("service-id").value = "Choose any Service";
     setSuccess(true);
   }
 
@@ -74,14 +74,13 @@ function ContactForm() {
           className="border border-[#D0D5DD] pl-4 md:pl-0 rounded-md md:border-0 md:rounded-none md:border-b py-2"
         />
         <p className="md:hidden mb-2 mt-4">Service</p>
-        <input
-          type="text"
-          id="service-id"
-          required
-          placeholder="Service"
-          onChange={(event) => setService(event.target.value)}
-          className="border border-[#D0D5DD] pl-4 md:pl-0 rounded-md md:border-0 md:rounded-none md:border-b py-2 w-full md:w-auto"
-        />
+        <select id="service-id" onChange={(e) => setService(e.target.value)} className="h-[45px] w-[250px] rounded-[5px] cursor-pointer border-[1px] border-gray-200 p-[5px]">
+          <option>Choose any Service</option>
+          <option value="Construction">Construction</option>
+          <option value="App Membrane">App Membrane</option>
+          <option value="HDPE / SBS Membrane">HDPE / SBS Membrane</option>
+          <option value="Brick Bat Coba">Brick Bat Coba</option>
+        </select>
         <button className="bg-[#5033E2] hidden text-white py-2 px-4 mt-4 md:mt-0 rounded-md md:inline-block cursor-pointer" onClick={sendData}>
           {loading ? "Send..." : "Send"}
         </button>

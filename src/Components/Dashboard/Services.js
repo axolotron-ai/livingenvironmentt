@@ -71,12 +71,12 @@ export default function Services() {
         return (
             <>
                 <div>
-                    <div className="flex items-center justify-between m-[20px] border-[2px] border-gray-200 p-[10px] rounded-t-[10px]">
-                        <p className="font-bold">Construction - Services</p>
+                    <div className="grid grid-flow-row m-[20px] border-[2px] border-gray-200 p-[10px] rounded-t-[10px]">
+                        <p className="font-bold pb-[25px]">Construction - Services</p>
                         <button onClick={() => setIsOpen(true)} className="bg-black text-white font-semibold h-[40px] w-[80px] rounded-[5px] cursor-pointer">New</button>
                     </div>
                     {isOpen &&
-                        <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-20 overflow-y-auto" onClick={() => setIsOpen(false)}>
+                        <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md bg-opacity-20 overflow-y-auto" onClick={() => setIsOpen(false)}>
                             <div className="bg-white p-[20px] rounded-[10px] shadow-2xl w-[500px] grid grid-flow-row" onClick={(e) => e.stopPropagation()}>
                                 <p className="font-semibold flex justify-between mb-[10px]">New <span>Construction Service</span></p>
                                 <p>Image URL</p>
@@ -107,7 +107,7 @@ export default function Services() {
                                         </div>
 
                                         {forUpdate && (value.id == ID) && (
-                                            <div className="fixed inset-0 flex items-center justify-center bg-white" onClick={() => setForUpdate(false)}>
+                                            <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md" onClick={() => setForUpdate(false)}>
                                                 <div className="bg-white p-[20px] rounded-lg shadow-2xl w-[500px] grid grid-flow-row" onClick={(e) => e.stopPropagation()}>
                                                     <p className="font-semibold flex items-center justify-between mb-[10px]">Update <span>Construction Service</span></p>
                                                     <p>Image URL</p>
@@ -197,11 +197,11 @@ export default function Services() {
         return (
             <>
                 <div className="grid grid-flow-row">
-                    <div className="flex items-center justify-between p-[10px] border-[2px] border-gray-200 m-[20px] rounded-t-[10px]">
-                        <p className="font-bold">WaterProof - Services</p>
+                    <div className="grid grid-flow-row p-[10px] border-[2px] border-gray-200 m-[20px] rounded-t-[10px]">
+                        <p className="font-bold pb-[25px]">WaterProof - Services</p>
                         <button onClick={() => setIsOpen(true)} className="h-[40px] bg-black font-semibold text-white w-[80px] rounded-[5px] cursor-pointer">New</button>
                         {isOpen &&
-                            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-20 overflow-scroll overflow-y-auto" onClick={() => setIsOpen(false)}>
+                            <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md bg-opacity-20 overflow-scroll overflow-y-auto" onClick={() => setIsOpen(false)}>
                                 <div className="bg-white p-[20px] rounded-[10px] w-[500px] shadow-2xl overflow-y-auto" onClick={(e) => e.stopPropagation()}>
                                     <div className="grid grid-flow-row">
                                         <p className="font-semibold pb-[10px] flex justify-between">New <span>WaterProof Service</span></p>
@@ -231,7 +231,7 @@ export default function Services() {
                                         <button onClick={() => deleteContent(value.id)} className="h-[40px] w-[80px] bg-red-700 text-white font-semibold rounded-[5px] cursor-pointer mr-[10px]">{deleteLoading ? "Deleting.." : "Delete"}</button>
                                         <button onClick={() => updateContent(value.id)} className="h-[40px] w-[80px] bg-black text-white font-semibold rounded-[5px] cursor-pointer">Update</button>
                                         {forUpdate && (value.id == ID) && (
-                                            <div className="fixed inset-0 flex items-center justify-center bg-white" onClick={() => setForUpdate(false)}>
+                                            <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md" onClick={() => setForUpdate(false)}>
                                                 <div className="bg-white p-[20px] rounded-lg shadow-2xl w-[500px] grid grid-flow-row" onClick={(e) => e.stopPropagation()}>
                                                     <p className="font-semibold flex items-center justify-between mb-[10px]">Update <span>Waterproof Service</span></p>
                                                     <p>Image URL</p>

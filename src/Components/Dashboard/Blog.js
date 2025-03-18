@@ -62,6 +62,7 @@ export default function Blog() {
     const [loadingUpdate, setLoadingUpdate] = useState(false);
     const [ID, setID] = useState("");
     const UpdateContentNew = async () => {
+        setLoadingUpdate(true);
         await updateData("Blog", ID, { img, title, content, createdAt: serverTimestamp() });
         setForUpdate(false);
         setLoadingUpdate(false);
@@ -71,21 +72,21 @@ export default function Blog() {
     return (
         <>
             <div>
-                <div className="m-[20px] border-[2px] border-gray-200 p-[10px] flex items-center justify-between rounded-t-[10px]">
-                    <p className="font-bold">Blog</p>
+                <div className="m-[20px] border-[2px] border-gray-200 p-[10px] grid grid-flow-row rounded-t-[10px]">
+                    <p className="font-bold pb-[25px]">Blogs</p>
                     <button onClick={() => setIsOpen(true)} className="h-[40px] w-[80px] text-center bg-black rounded-[5px] text-white font-semibold cursor-pointer">New</button>
                 </div>
                 {isOpen &&
-                    <div className="fixed inset-0 flex items-center justify-center bg-white" onClick={() => setIsOpen(false)}>
+                    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md" onClick={() => setIsOpen(false)}>
                         <div className="bg-white p-[20px] rounded-[10px] shadow-2xl w-[500px] grid grid-flow-row gap-[10px]" onClick={(e) => e.stopPropagation()}>
                             <p className="font-semibold flex justify-between">New <span>Blog</span></p>
                             <p>Image URL</p>
-                            <input placeholder="Image" type="url" onChange={(e) => setImg(e.target.value)} className="p-[5px] bg-gray-200 rounded-[5px] mb-[10px]"></input>
+                            <textarea placeholder="Image" type="url" onChange={(e) => setImg(e.target.value)} className="p-[5px] bg-gray-200 rounded-[5px] mb-[10px]"></textarea>
                             <p>Title</p>
-                            <input placeholder="Title" onChange={(e) => setTitle(e.target.value)} className="p-[5px] bg-gray-200 rounded-[5px] mb-[10px]"></input>
+                            <textarea placeholder="Title" onChange={(e) => setTitle(e.target.value)} className="p-[5px] bg-gray-200 rounded-[5px] mb-[10px]"></textarea>
                             <p>Content</p>
                             <textarea placeholder="Content" type="text" onChange={(e) => setContent(e.target.value)} className="p-[5px] bg-gray-200 rounded-[5px] mb-[10px]"></textarea>
-                            <button onClick={postData} className="h-[45px] bg-black font-semibold text-white rounded-[10px]">{
+                            <button onClick={postData} className="h-[45px] bg-black font-semibold text-white rounded-[10px] cursor-pointer">{
                                 loading ? "Uploading.." : "Upload"
                             }</button>
                         </div>
@@ -101,7 +102,7 @@ export default function Blog() {
                                 <button onClick={() => deleteContent(value.id)} className="h-[40px] w-[80px] bg-red-700 rounded-[5px] cursor-pointer text-white font-semibold">Delete</button>
                                 <button onClick={() => updateContent(value.id)} className="h-[40px] w-[80px] bg-black rounded-[5px] cursor-pointer font-semibold text-white ml-[10px]">Update</button>
                                 {forUpdate && (value.id == ID) && (
-                                    <div className="fixed inset-0 flex items-center justify-center bg-white" onClick={() => setForUpdate(false)}>
+                                    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md" onClick={() => setForUpdate(false)}>
                                         <div className="bg-white p-[20px] rounded-[10px] shadow-2xl w-[500px] grid grid-flow-row" onClick={(e) => e.stopPropagation()}>
                                             <p className="flex items-center justify-between font-semibold mb-[10px]">Update <span>Blog</span></p>
                                             <p>Image URL</p>

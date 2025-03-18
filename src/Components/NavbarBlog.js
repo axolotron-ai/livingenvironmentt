@@ -1,41 +1,40 @@
 "use client";
+import { Menu, Close } from "@mui/icons-material";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
+import { Link } from "react-scroll";
+import NextLink from "next/link";
 import HamburgerIcon from "@/components/HamburgerIcon";
 import { Drawer, Box } from "@mui/material";
 
-function Navbar({ bg }: { bg: string }) {
+
+function NavbarBlog({ bg }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className={`${bg == "white" ? "bg-white text-black" : "bg-black text-white"
-        } h-[80px] py-4 px-10 flex justify-between items-center fixed z-50 top-0 left-0 w-full shadow-2xl`}
+      className={`${bg === "white" ? "bg-white text-black" : "bg-black text-white"
+        } h-[80px] py-4 px-10 flex justify-between items-center fixed w-full z-50 top-0 left-0 shadow-2xl`}
     >
-      <Image
-        src="/logo.png"
-        width={140}
-        height={140}
-        alt="logo"
-        className="p"
-      />
+      <Image src="/logo.png" width={140} height={140} alt="logo" />
+
       <div className="gap-x-8 items-center hidden md:flex">
-        <Link href="#" className="underline underline-offset-4">Home</Link>
-        <Link href="/construction/services">Services</Link>
-        <a href="/blog">Blogs</a>
-        <Link href="/construction">Construction</Link>
-        <a href="#contact">
+        <a href="/">Home</a>
+        <a href="/construction/services">Services</a>
+        <NextLink href="/blog" className="underline underline-offset-4">Blogs</NextLink>
+        <a href="/construction" >Construction</a>
+        <a href="/construction#contact">
           <button className="bg-[#5033E2] text-white px-4 py-1 rounded-md cursor-pointer">
             Free Consultation
           </button>
         </a>
       </div>
+
       <div className="md:hidden">
         <div onClick={() => setIsOpen(true)} className="cursor-pointer">
           <HamburgerIcon />
         </div>
         {isOpen &&
-          <Drawer anchor="right" open={isOpen} onClose={() => setIsOpen(false)}>
+          <Drawer anchor="right" open={open} onClose={() => setIsOpen(false)}>
             <Box
               className="w-64 p-4"
               role="presentation"
@@ -77,4 +76,4 @@ function Navbar({ bg }: { bg: string }) {
   );
 }
 
-export default Navbar;
+export default NavbarBlog;

@@ -8,7 +8,7 @@ const scrollToSection = (id) => {
 
 function Hero() {
   return (
-    <div className="relative text-white">
+    <div className="relative text-white md:mt-[80px] mt-[100px]">
       <div className="text-black md:absolute md:text-white md:top-40 md:left-20 md:w-[500px] z-10 mx-4 md:mx-0">
         <h1 className="text-2xl font-bold md:text-4xl mb-4 mr-20 mt-4 md:mt-0 md:mr-0">
           Say Goodbye to Leaks with Hassle-free{" "}

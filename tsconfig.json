@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/Components/Frontimg.js", "src/Components/Services.js", "src/Components/BlogSectionC.js", "src/Components/NavbarC.js", "src/app/blog/page.js", "src/Components/ContactForm.js", "src/app/layout.tsx", "src/Components/Navbar.tsx", "next.config.js", "src/Components/TypesOfWaterproofing.js", "src/app/page.js", "src/Components/Hero.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/Components/Frontimg.js", "src/Components/Services.js", "src/Components/BlogSectionC.js", "src/Components/NavbarCons.js", "src/app/blog/page.js", "src/Components/ContactForm.js", "src/app/layout.tsx", "src/Components/Navbar.tsx", "next.config.js", "src/Components/TypesOfWaterproofing.js", "src/app/page.js", "src/Components/Hero.js"],
   "exclude": ["node_modules"]
 }

@@ -1,7 +1,12 @@
-import MenuIcon from "@mui/icons-material/Menu";
-
 const HamburgerIcon = () => {
-  return <MenuIcon className="w-6 h-6" />;
+  return (
+    <button className="flex flex-col space-y-1">
+      <span className="block w-6 h-0.5 bg-white"></span>
+      <span className="block w-6 h-0.5 bg-white"></span>
+      <span className="block w-6 h-0.5 bg-white"></span>
+    </button>
+
+  )
 };
 
 export default HamburgerIcon;

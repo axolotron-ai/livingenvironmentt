@@ -70,7 +70,7 @@ const Services = () => {
             <button onClick={() => checkBox(datum)} className="text-[#FC9713] text-start text-[18px] md:text-xl cursor-pointer font-semibold">View Details &gt;</button>
           </div>
         ))}
-        {openBox && <div className="fixed inset-0 flex items-center justify-center bg-white" onClick={() => setOpenBox(false)}>
+        {openBox && <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md md:mt-[80px]" onClick={() => setOpenBox(false)}>
           <div className="bg-gray-200 p-[20px] rounded-[10px] h-[500px] md:h-[580px] shadow-2xl w-[300px] md:w-[1000px] grid grid-flow-row gap-[10px] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="grid grid-flow-row">
               <div className="text-red-800 text-end mb-[10px] cursor-pointer" onClick={() => setOpenBox(false)}>Close</div>
@@ -89,9 +89,11 @@ const Services = () => {
       </div>
 
       <div className="pb-[40px] md:py-[15px] flex items-center justify-center">
-        <button className="bg-[#FC9713] font-bold h-[50px] w-[220px] font-inter rounded-[5px] cursor-pointer text-[22px]">
-          Read More
-        </button>
+        <a href="/construction/services">
+          <button className="bg-[#FC9713] font-bold h-[50px] w-[220px] font-inter rounded-[5px] cursor-pointer text-[22px]">
+            Read More
+          </button>
+        </a>
       </div>
 
       <div className="border-[0.5px] border-[#D9D9D9] md:mx-[80px] md:mt-[50px] mx-[30px] mb-[50px]" />
